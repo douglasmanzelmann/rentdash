@@ -13,6 +13,8 @@ feature "Creating a new listing" do
     fill_in 'Description', with: description
     fill_in 'Rent', with: "500"
 
-    click_button 'Submit'
+    click_button 'Create Listing'
+
+    expect(page).to have_content("Listing has been created.")
   end
 end
