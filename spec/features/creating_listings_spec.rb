@@ -16,5 +16,13 @@ feature "Creating a new listing" do
     click_button 'Create Listing'
 
     expect(page).to have_content("Listing has been created.")
+
+    listing = Listing.where(title: 'Awesome house').first
+
+    expect(page.current_url).to eql(listing_url(listing))
+
+    title = "Awesome house - Listings - RentDash"
+    expect(page).to have_title title
+    #expect(find("title").native.text).to have_content(title)
   end
 end
