@@ -15,7 +15,8 @@ class ListingsController < ApplicationController
       flash[:notice] = "Listing has been created."
       redirect_to @listing 
     else
-      #
+      flash[:alert] = "Listing hasn't been created."
+      render 'new'
     end
   end
 
