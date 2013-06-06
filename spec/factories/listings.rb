@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :listing do
-    title "MyString"
-    location "MyString"
-    description "MyText"
-    rent 1
+    title "YOLO"
+    location "Up your butt"
+    description "And around corner one. Then Corner two. And then back up your butt."
+    rent 500
   end
 end

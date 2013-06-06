@@ -1,3 +1,11 @@
 <h2>Listings</h2>
 
+<div>
+  <ul>
+    <% @listings.each do |listing| %>
+      <li><%= link_to listing.title, listing %></li>
+    <% end %>
+  </ul>
+</div>
+
 <%= link_to "New Listing", new_listing_path %>
