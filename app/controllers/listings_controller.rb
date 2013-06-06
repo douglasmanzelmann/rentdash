@@ -24,6 +24,22 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end
 
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+
+    if @listing.update(listing_params)
+      flash[:notice] = "Listing has been updated."
+      redirect_to @listing 
+    else
+      flash[:alert] = "Listing has not been updated."
+      render 'edit'
+    end
+  end
+
 private
   def listing_params
     params.require(:listing).permit(:title, :location, :description, :rent)
